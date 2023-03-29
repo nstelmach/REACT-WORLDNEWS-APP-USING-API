@@ -132,7 +132,7 @@ export const navLinks = [
     icon: GR,
   },
   {
-    name: "HongKong",
+    name: "Hong Kong",
     APIcode: "hk",
     icon: HK,
   },

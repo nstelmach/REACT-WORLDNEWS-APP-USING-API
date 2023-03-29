@@ -8,10 +8,13 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div>
+    <div className="position-relative min-vh-100">
       <Header />
-      <SideMenu />
-      {children}
+      <div className="d-flex justify-content-center w-100">
+        <SideMenu />
+        {children}
+      </div>
+
       <Footer />
     </div>
   );

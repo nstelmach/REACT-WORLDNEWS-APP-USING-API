@@ -1,11 +1,15 @@
 import { useState } from "react";
 import PopUp from "./PopUp";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../hooks";
+import { toggle } from "../features/articlesViewSlice";
 
 function Header() {
   const [isActiveIcon, setIsActiveIcon] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const dispatch = useAppDispatch();
 
   const showModal = () => {
     setIsOpen(true);
@@ -13,6 +17,11 @@ function Header() {
 
   const hideModal = () => {
     setIsOpen(false);
+  };
+
+  const changeViewHandler = () => {
+    setIsActiveIcon((state) => !state);
+    dispatch(toggle());
   };
 
   return (
@@ -47,7 +56,7 @@ function Header() {
             <button
               type="button"
               className="btn btn btn-outline-primary mx-3"
-              onClick={() => setIsActiveIcon((state) => !state)}
+              onClick={changeViewHandler}
             >
               {isActiveIcon ? (
                 <i className="bi bi-list"></i>

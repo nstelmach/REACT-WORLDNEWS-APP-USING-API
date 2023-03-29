@@ -1,14 +1,30 @@
 import React from "react";
 import Layout from "./components/Layout";
 import MainContent from "./components/MainContent";
+import { Routes, Route } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <Layout>
-        <MainContent />
+        <Routes>
+          <Route
+            path="/"
+            element={<MainContent />}
+            errorElement={<ErrorPage />}
+          />
+          <Route
+            path="/country/:countryName"
+            element={<MainContent />}
+            errorElement={<ErrorPage />}
+          />
+        </Routes>
       </Layout>
-    </div>
+    </QueryClientProvider>
   );
 }
 

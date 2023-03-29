@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../hooks";
 
 function Footer() {
   var [date, setDate] = useState(new Date());
+
+  const articlesNumber = useAppSelector((state) => state.articlesNumber.value);
 
   useEffect(() => {
     var timer = setInterval(() => setDate(new Date()), 1000);
@@ -27,7 +30,9 @@ function Footer() {
         </div>
 
         <div className="d-flex ">
-          <div className="text-body-secondary ms-4">Articles: 100</div>
+          <div className="text-body-secondary ms-4">
+            Articles: {articlesNumber}
+          </div>
           <div className="text-body-secondary ms-4">
             {date.toLocaleTimeString()}
           </div>
