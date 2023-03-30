@@ -29,8 +29,8 @@ function SideMenu() {
   ));
   return (
     <div
-      className="d-flex flex-column flex-shrink-0 p-3 bg-light align-self-start"
-      style={{ width: menuWidth, marginTop: "95px" }}
+      className="d-flex flex-column flex-shrink-0 p-3 bg-light mh-100 overflow-scroll"
+      style={{ width: menuWidth }}
     >
       <div
         className={clsx(

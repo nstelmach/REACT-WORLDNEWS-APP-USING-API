@@ -8,13 +8,15 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className="position-relative min-vh-100">
+    <div className=" min-vh-100">
       <Header />
-      <div className="d-flex justify-content-center w-100">
+      <div
+        className="d-flex justify-content-center"
+        style={{ height: "calc(100vh - 70px - 58px)" }}
+      >
         <SideMenu />
         {children}
       </div>
-
       <Footer />
     </div>
   );

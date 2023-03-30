@@ -3,9 +3,10 @@ import PopUp from "./PopUp";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks";
 import { toggle } from "../features/articlesViewSlice";
+import { useAppSelector } from "../hooks";
 
 function Header() {
-  const [isActiveIcon, setIsActiveIcon] = useState(false);
+  const isGridView = useAppSelector((state) => state.articlesView.isGridView);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,12 +21,11 @@ function Header() {
   };
 
   const changeViewHandler = () => {
-    setIsActiveIcon((state) => !state);
     dispatch(toggle());
   };
 
   return (
-    <header className="fixed-top py-3 border-bottom bg-white">
+    <header className="py-3 border-bottom bg-white mb-4">
       <div className="container d-flex flex-wrap justify-content-center">
         <Link
           to="/"
@@ -48,8 +48,9 @@ function Header() {
               hideModal={hideModal}
               isOpen={isOpen}
               title="Hardships and fun"
-              body="lallala"
-            />
+            >
+              lallallal
+            </PopUp>
           </li>
 
           <li className="nav-item">
@@ -58,7 +59,7 @@ function Header() {
               className="btn btn btn-outline-primary mx-3"
               onClick={changeViewHandler}
             >
-              {isActiveIcon ? (
+              {isGridView ? (
                 <i className="bi bi-list"></i>
               ) : (
                 <i className="bi bi-grid"></i>

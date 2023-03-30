@@ -8,7 +8,7 @@ function Footer() {
   const articlesNumber = useAppSelector((state) => state.articlesNumber.value);
 
   useEffect(() => {
-    var timer = setInterval(() => setDate(new Date()), 1000);
+    const timer = setInterval(() => setDate(new Date()), 1000);
     return function cleanup() {
       clearInterval(timer);
     };
