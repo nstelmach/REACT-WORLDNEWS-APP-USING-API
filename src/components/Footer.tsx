@@ -40,7 +40,6 @@ function Footer() {
             &copy; 2023 Natalia Stelmach
           </span>
         </div>
-
         <div className={clsx("d-flex ", styles.timeWrapper)}>
           <div className="text-body-secondary ms-4">
             Articles: {articlesNumber}

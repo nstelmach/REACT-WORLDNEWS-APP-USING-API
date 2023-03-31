@@ -63,14 +63,13 @@ function Header() {
               new project in exactly the technologies in which I intend to
               develop as a frontend developer. It was fun to be able to combine
               all these tools into one whole so that everything works together
-              and works properly. A nice discovery was also using Bootstrap to
-              style components and using and displaying data from the API. I was
-              also very satisfied with the fact that the technologies that I had
-              the pleasure to use for the first time, after reading the
-              documentation, work efficiently. The biggest difficulty for me was
-              writing tests and using redux, because I did it for the first
-              time, but after reading the documentation, everything worked
-              smoothly.
+              and works properly. A nice experience was also using and
+              displaying data from the API. I was also very satisfied with the
+              fact that the technologies that I had the pleasure to use for the
+              first time, after reading the documentation, work efficiently. The
+              biggest difficulty for me was writing tests and using redux,
+              because I did it for the first time, but after reading the
+              documentation, everything worked smoothly.
             </PopUp>
           </li>
 

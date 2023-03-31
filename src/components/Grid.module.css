@@ -1,0 +1,8 @@
+@media (max-width: 770px) {
+  .container {
+    padding: 0 1rem !important;
+  }
+  .wrapper {
+    margin: 0 1rem !important;
+  }
+}

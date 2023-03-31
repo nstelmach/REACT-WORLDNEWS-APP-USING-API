@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/prefer-presence-queries */
 /* eslint-disable testing-library/prefer-screen-queries */
-import { screen, render, fireEvent, getByText } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import PopUp from "./PopUp";
 
@@ -31,5 +31,17 @@ describe("PopUp test", () => {
     fireEvent.click(getByText(/close/i));
 
     expect(handleClose).toHaveBeenCalledTimes(1);
+  });
+
+  test("hides pop up", () => {
+    const children = "Children";
+
+    render(
+      <PopUp hideModal={() => {}} isOpen={false}>
+        {children}
+      </PopUp>
+    );
+
+    expect(screen.queryByText(children)).toBeFalsy();
   });
 });
