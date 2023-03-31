@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 import { navLinks } from "../NavLinks";
 import { useAppDispatch } from "../hooks";
 import { getArticlesNumber } from "../features/articlesNumberSlice";
-import { Article } from "../types";
+import { NewsResponse } from "../types";
 
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
@@ -44,12 +44,6 @@ function MainContent() {
       setArticleData({ content: content, author: author, url: url });
     };
 
-  type NewsResponse = {
-    status: string;
-    totalResults: number;
-    articles: Article[];
-  };
-
   const getNews = async () => {
     const res = await fetch(
       `https://newsapi.org/v2/top-headlines?country=${link?.APIcode}&apiKey=${API_KEY}`
@@ -62,7 +56,7 @@ function MainContent() {
     getNews,
     {
       onSuccess: (data) => {
-        dispatch(getArticlesNumber(data?.articles.length));
+        dispatch(getArticlesNumber(data?.articles?.length));
       },
     }
   );

@@ -4,17 +4,10 @@ type PopUpProps = {
   hideModal: () => void;
   isOpen: boolean;
   title?: string;
-
-  children?: React.ReactNode;
+  children: React.ReactNode;
 };
 
-function PopUp({
-  hideModal,
-  isOpen,
-  title,
-
-  children,
-}: PopUpProps) {
+function PopUp({ hideModal, isOpen, title, children }: PopUpProps) {
   return (
     <Modal show={isOpen} onHide={hideModal}>
       <Modal.Header>

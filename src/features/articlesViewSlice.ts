@@ -14,9 +14,7 @@ export const articlesViewSlice = createSlice({
   initialState,
   reducers: {
     toggle: (state) => {
-      state.isGridView === false
-        ? (state.isGridView = true)
-        : (state.isGridView = false);
+      return { isGridView: !state.isGridView };
     },
   },
 });

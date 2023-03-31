@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import { Article } from "../types";
+import styles from "./List.module.css";
 
 type ListProps = {
   articles: Article[];
@@ -11,7 +13,7 @@ type ListProps = {
 };
 
 function List({ articles, getDataClickHandler, isLoading }: ListProps) {
-  const article = articles?.map((article: any) => (
+  const article = articles?.map((article: Article) => (
     <div
       key={article.url}
       className="list-group-item list-group-item-action d-flex gap-3"
@@ -22,30 +24,38 @@ function List({ articles, getDataClickHandler, isLoading }: ListProps) {
         article.url
       )}
     >
-      <div className="d-flex gap-2 w-100 justify-content-between">
+      <div
+        className={clsx(
+          "d-flex gap-2 w-100 justify-content-between",
+          styles.listItem
+        )}
+      >
         <div>
           <h6 className="mb-0 ">
-            {article.title === null ? "No title found" : article.title}
+            {article.title ? article.title : "No title found"}
           </h6>
           <p className="mb-0 mt-2 opacity-75">
             Source:{" "}
-            {article.source.name === null
-              ? "No source name found"
-              : article.source.name}
+            {article.source.name ? article.source.name : "No source name found"}
           </p>
         </div>
         <small className="opacity-50 text-nowrap">
-          {article.publishedAt === null
-            ? "No date found"
-            : article.publishedAt.replace("T", " ").slice(0, -4)}
+          {article.publishedAt
+            ? article.publishedAt.replace("T", " ").slice(0, -4)
+            : "No date found"}
         </small>
       </div>
     </div>
   ));
 
   return (
-    <div className="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 justify-content-center bg-body-tertiary mx-5 w-100 mh-100 overflow-scroll ">
-      <div className="list-group">
+    <div
+      className={clsx(
+        "d-flex flex-column flex-md-row p-4 gap-4 py-md-5 justify-content-center bg-body-tertiary mx-5 w-100 mh-100",
+        styles.listWrapper
+      )}
+    >
+      <div className="list-group overflow-scroll">
         {isLoading ? (
           <div
             className="spinner-border text-primary m-5"

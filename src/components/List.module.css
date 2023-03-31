@@ -1,0 +1,8 @@
+@media (max-width: 770px) {
+  .listItem {
+    flex-direction: column;
+  }
+  .listWrapper {
+    margin: 0 1rem !important;
+  }
+}

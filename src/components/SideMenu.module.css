@@ -1,0 +1,23 @@
+@media (max-width: 480px) {
+  .menu {
+    width: 55px !important;
+    padding: 0 !important;
+  }
+  .button {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .menu {
+    position: absolute !important;
+    z-index: 10;
+    width: 100% !important;
+  }
+  .link {
+    justify-content: center !important;
+  }
+  .title {
+    padding: 0 2rem;
+  }
+}

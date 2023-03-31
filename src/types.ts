@@ -8,3 +8,9 @@ export type Article = {
   publishedAt: string;
   content: string;
 };
+
+export type NewsResponse = {
+  status: string;
+  totalResults: number;
+  articles: Article[];
+};
