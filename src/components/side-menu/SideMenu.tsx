@@ -1,4 +1,4 @@
-import { navLinks } from "../NavLinks";
+import { navLinks } from "../../constants/NavLinks";
 import { useState } from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
@@ -11,7 +11,6 @@ function SideMenu() {
     setIsExpandedMenu((state) => !state);
   }
 
-  //let menuWidth = isExpandedMenu ? "250px" : "88px";
   let iconSize = isExpandedMenu ? "16px" : "24px";
 
   const countryList = navLinks.map((navLinks) => (

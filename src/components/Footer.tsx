@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../hooks";
+import { useAppSelector } from "../redux/hooks/hooks";
 
 function Footer() {
   var [date, setDate] = useState(new Date());

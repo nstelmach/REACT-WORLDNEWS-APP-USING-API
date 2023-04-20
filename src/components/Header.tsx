@@ -1,9 +1,9 @@
 import { useState } from "react";
-import PopUp from "./PopUp";
+import PopUp from "./popup/PopUp";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../hooks";
-import { toggle } from "../features/articlesViewSlice";
-import { useAppSelector } from "../hooks";
+import { useAppDispatch } from "../redux/hooks/hooks";
+import { toggle } from "../redux/features/articlesViewSlice";
+import { useAppSelector } from "../redux/hooks/hooks";
 
 function Header() {
   const isGridView = useAppSelector((state) => state.articlesView.isGridView);

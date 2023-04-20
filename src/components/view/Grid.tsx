@@ -1,5 +1,5 @@
-import image from "../images/image-not-found.png";
-import { Article } from "../types";
+import image from "../../images/image-not-found.png";
+import { Article } from "../../types/types";
 
 type GridProps = {
   articles: Article[];

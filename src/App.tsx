@@ -1,8 +1,7 @@
-import React from "react";
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 import MainContent from "./components/MainContent";
 import { Routes, Route, Navigate } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./components/error/ErrorPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ErrorBoundary } from "react-error-boundary";
 

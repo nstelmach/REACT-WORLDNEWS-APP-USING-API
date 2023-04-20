@@ -1,14 +1,14 @@
-import List from "./List";
-import Grid from "./Grid";
-import { useAppSelector } from "../hooks";
+import List from "./view/List";
+import Grid from "./view/Grid";
+import { useAppSelector } from "../redux/hooks/hooks";
 import { useQuery } from "react-query";
 import { useState } from "react";
-import PopUp from "./PopUp";
+import PopUp from "./popup/PopUp";
 import { useLocation } from "react-router-dom";
-import { navLinks } from "../NavLinks";
-import { useAppDispatch } from "../hooks";
-import { getArticlesNumber } from "../features/articlesNumberSlice";
-import { NewsResponse } from "../types";
+import { navLinks } from "../constants/NavLinks";
+import { useAppDispatch } from "../redux/hooks/hooks";
+import { getArticlesNumber } from "../redux/features/articlesNumberSlice";
+import { NewsResponse } from "../types/types";
 
 const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
