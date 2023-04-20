@@ -2,5 +2,7 @@ It is a worldNews application that generates news using a public API. It is poss
 
 There is no link because the API is not available for free in production. The application can be checked with npm start.
 
+View on header, footer, list, grid, menu and expanded menu:
 
 ![worldnews](https://user-images.githubusercontent.com/90278376/233369694-5691b888-9d7b-44cd-b2c5-0d0c94eafd5d.jpg)
+![news1](https://user-images.githubusercontent.com/90278376/233395879-f82e718c-d23f-40c3-b5f5-27c84a1b0336.jpg)
