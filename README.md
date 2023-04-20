@@ -1,0 +1,3 @@
+It is a worldNews application that generates news using a public API. It is possible to change the view from list to tiles. In the side menu, there is a list of countries, after clicking, news from a given country will be displayed. When you click on an article, a popup with more information will be displayed. The footer displays the current time and the number of articles displayed on the page. Technologies such as React, React Router, React Query, Redux, Typescript and Bootstrap were used to complete the project. Two popup tests were also performed using the React Testing Library.
+
+Link to the application: www.app.pl

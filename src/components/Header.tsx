@@ -32,7 +32,7 @@ function Header() {
           className="d-flex align-items-center mb-3 m-sm-0 me-md-auto text-dark text-decoration-none"
         >
           <i className="bi bi-newspaper fs-4 me-3"></i>
-          <span className="fs-4">gnNews</span>
+          <span className="fs-4">worldNews</span>
         </Link>
 
         <ul className="nav nav-pills">
