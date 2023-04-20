@@ -1,7 +1,5 @@
-import clsx from "clsx";
 import image from "../images/image-not-found.png";
 import { Article } from "../types";
-import styles from "./Grid.module.css";
 
 type GridProps = {
   articles: Article[];
@@ -69,13 +67,8 @@ function Grid({ articles, getDataClickHandler, isLoading }: GridProps) {
   ));
 
   return (
-    <div
-      className={clsx(
-        "album py-5 bg-body-tertiary mx-5 w-100 mh-100 overflow-scroll",
-        styles.wrapper
-      )}
-    >
-      <div className={clsx("container px-5 ", styles.container)}>
+    <div className="album py-5 bg-body-tertiary mx-md-5 mx-3 w-100 mh-100 overflow-scroll">
+      <div className="container px-md-5 px-3">
         {isLoading ? (
           <div className="d-flex justify-content-center">
             <div

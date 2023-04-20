@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks";
 import { toggle } from "../features/articlesViewSlice";
 import { useAppSelector } from "../hooks";
-import clsx from "clsx";
-import styles from "./Header.module.css";
 
 function Header() {
   const isGridView = useAppSelector((state) => state.articlesView.isGridView);
@@ -27,19 +25,11 @@ function Header() {
   };
 
   return (
-    <header className={clsx("py-3 border-bottom bg-white mb-4", styles.header)}>
-      <div
-        className={clsx(
-          "container d-flex flex-wrap justify-content-center",
-          styles.container
-        )}
-      >
+    <header className="d-flex justify-content-center py-3 border-bottom bg-white mb-4">
+      <div className="container d-flex flex-column flex-sm-row flex-wrap justify-content-center justify-content-sm-between align-items-center max-vw-100 mx-4 mx-md-0">
         <Link
           to="/"
-          className={clsx(
-            "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none",
-            styles.logo
-          )}
+          className="d-flex align-items-center mb-3 m-sm-0 me-md-auto text-dark text-decoration-none"
         >
           <i className="bi bi-newspaper fs-4 me-3"></i>
           <span className="fs-4">gnNews</span>

@@ -11,7 +11,7 @@ function SideMenu() {
     setIsExpandedMenu((state) => !state);
   }
 
-  let menuWidth = isExpandedMenu ? "250px" : "88px";
+  //let menuWidth = isExpandedMenu ? "250px" : "88px";
   let iconSize = isExpandedMenu ? "16px" : "24px";
 
   const countryList = navLinks.map((navLinks) => (
@@ -19,9 +19,10 @@ function SideMenu() {
       <Link
         to={`country/${navLinks.name}`}
         className={clsx(
-          "nav-link link-dark d-flex flex-row align-items-center my-2 gap-2",
-          isExpandedMenu ? "justify-content-start" : "justify-content-center",
-          styles.link
+          "nav-link link-dark d-flex flex-row align-items-center my-2 gap-2 justify-content-center",
+          isExpandedMenu
+            ? "justify-content-sm-start"
+            : "justify-content-sm-center"
         )}
       >
         <navLinks.icon title={`${navLinks.name}`} style={{ width: iconSize }} />
@@ -32,26 +33,25 @@ function SideMenu() {
   return (
     <div
       className={clsx(
-        "d-flex flex-column flex-shrink-0 p-3 bg-light mh-100 overflow-scroll",
+        "d-flex flex-column flex-shrink-0 p-1 p-sm-3 bg-light mh-100 overflow-scroll ",
+        isExpandedMenu && "p-3 p-sm-0",
         isExpandedMenu && styles.menu
       )}
-      style={{ width: menuWidth }}
     >
       <div
         className={clsx(
-          "d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none w-100",
-          !isExpandedMenu && "justify-content-center",
-          styles.title
+          "d-flex align-items-center me-md-auto link-dark text-decoration-none w-100 px-1 px-sm-3",
+          !isExpandedMenu && "justify-content-center"
         )}
       >
         {isExpandedMenu && <i className="bi bi-newspaper fs-4 me-3"></i>}
-        {isExpandedMenu && <h2 className="fs-4">Menu</h2>}
+        {isExpandedMenu && <h2 className="fs-4 me-sm-3">Menu</h2>}
         <button
           type="button"
           className={clsx(
-            `btn btn-outline-primary`,
-            isExpandedMenu && "ms-auto",
-            styles.button
+            `btn btn-outline-primary `,
+            isExpandedMenu && "ms-auto ",
+            !isExpandedMenu && "mt-3 mt-sm-0"
           )}
           onClick={onMenuClick}
         >

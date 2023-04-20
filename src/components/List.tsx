@@ -1,6 +1,4 @@
-import clsx from "clsx";
 import { Article } from "../types";
-import styles from "./List.module.css";
 
 type ListProps = {
   articles: Article[];
@@ -24,12 +22,7 @@ function List({ articles, getDataClickHandler, isLoading }: ListProps) {
         article.url
       )}
     >
-      <div
-        className={clsx(
-          "d-flex gap-2 w-100 justify-content-between",
-          styles.listItem
-        )}
-      >
+      <div className="d-flex gap-2 w-100 justify-content-between flex-column flex-md-row">
         <div>
           <h6 className="mb-0 ">
             {article.title ? article.title : "No title found"}
@@ -49,12 +42,7 @@ function List({ articles, getDataClickHandler, isLoading }: ListProps) {
   ));
 
   return (
-    <div
-      className={clsx(
-        "d-flex flex-column flex-md-row p-4 gap-4 py-md-5 justify-content-center bg-body-tertiary mx-5 w-100 mh-100",
-        styles.listWrapper
-      )}
-    >
+    <div className="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 justify-content-center bg-body-tertiary mx-md-5 mx-3 w-100 mh-100">
       <div className="list-group overflow-scroll">
         {isLoading ? (
           <div
