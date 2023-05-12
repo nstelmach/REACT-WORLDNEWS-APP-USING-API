@@ -1,7 +1,7 @@
 {
   "name": "gn-news",
   "version": "0.1.0",
-  "homepage": "https://nstelmach.github.io/worldNews",
+  "homepage": "https://nstelmach.github.io/REACT-WORLDNEWS-APP-USING-API",
   "private": true,
   "dependencies": {
     "@tanstack/react-query": "^4.28.0",
